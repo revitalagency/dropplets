@@ -160,8 +160,9 @@ if ($filename==NULL) {
 
         // Get all page meta.
         $page_meta = implode("\n", $get_page_meta);
-
+		
         ob_end_clean();
+        
     } else {
         ob_start();
 
@@ -460,6 +461,7 @@ else {
                 <h2>Install Dropplets</h2>
                 <p>Welcome to an easier way to blog.</p>
                 
+                <input type="text" name="admin-slug" id="admin-slug" required placeholder="Admin Slug"> <!- r3+ -->
                 <input type="password" name="password" id="password" required placeholder="Choose Your Password">
                 <input type="password" name="password-confirmation" id="password-confirmation" required placeholder="Confirm Your Password" onblur="confirmPass()">
 

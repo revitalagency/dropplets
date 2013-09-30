@@ -59,6 +59,12 @@ if ($_POST["submit"] == "submit" && (!file_exists($settings_file) || isset($_SES
     if (!isset($password) || !empty($_POST["password"])) {
         $password = $hasher->HashPassword($_POST["password"]);
     }
+    
+    // r3+
+    if (isset($_POST["admin-slug"])) {
+        $admin_slug = $_POST["admin-slug"];
+    }
+    // eof r3+
 
     if(!isset($header_inject)) {
         $header_inject = "";        
@@ -89,6 +95,7 @@ if ($_POST["submit"] == "submit" && (!file_exists($settings_file) || isset($_SES
     $config[] = settings_format("intro_title", $intro_title);
     $config[] = settings_format("intro_text", $intro_text);
     $config[] = "\$password = '".$password."';";
+    $config[] = settings_format("admin_slug", $admin_slug); // r3+
     $config[] = settings_format("header_inject", $header_inject);
     $config[] = settings_format("footer_inject", $footer_inject);
     $config[] = settings_format("template", $template);

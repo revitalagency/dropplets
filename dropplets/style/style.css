@@ -76,7 +76,7 @@ body.dp-install form {
     border: 1px solid rgba(0, 0, 0, 0.15);
     background-color: rgba(0, 0, 0, 0.01);
     width: 320px;
-    height: 340px;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -100,7 +100,7 @@ body.dp-install form p {
     padding: 0 10px;
 }
 
-body.dp-install form input[type="password"] {
+body.dp-install form input {
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.15);
     outline: none;
@@ -125,11 +125,10 @@ body.dp-install form button {
     text-align: center;
     width: 70px;
     height: 70px;
-    position: absolute;
-    bottom: -35px;
-    left: 160px;
-    margin-left: -35px;
     cursor: pointer;
+    display: block;
+    clear: both;
+    margin: 0 auto 10px auto;
     -webkit-appearance: none;
     -moz-transition-duration: 0.1s;
     -webkit-transition-duration: 0.1s;

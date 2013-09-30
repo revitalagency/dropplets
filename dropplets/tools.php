@@ -6,7 +6,11 @@
 
 $login_error = LOGIN_ERROR;
 
-if (!isset($_SESSION['user'])) { ?>
+if( isset($_GET["admin"]) ){ // r3+ 
+
+if( $_GET["admin"] == ADMIN_SLUG){ // r3+ 
+
+if( !isset($_SESSION['user']) ) { ?>
 
 <div class="dp-panel-wrapper <?php if($_COOKIE['dp-panel']) { echo($_COOKIE['dp-panel']); } ?>" id="dp-dropplets">
     <div class="dp-panel">
@@ -364,4 +368,16 @@ if (isset($_SESSION['user'])) { ?>
     });
 </script>
 
-<?php } ?>
+<?php 
+} 
+
+} else {
+	// r3+ show nothing b/c admin slug doesnt match // no hints for hackers 
+}
+	
+} else {
+	// r3+ show nothing b/c we havent entered the secret admin slug 
+}	
+	
+?>
+
