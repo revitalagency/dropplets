@@ -339,6 +339,9 @@ function get_header() { ?>
     <link rel="stylesheet" href="<?php echo BLOG_URL; ?>dropplets/style/style.css">
     <link rel="shortcut icon" href="<?php echo BLOG_URL; ?>dropplets/style/images/favicon.png">
 
+	<!-- jQuery & Required Scripts -->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        
     <!-- User Header Injection -->
     <?php echo HEADER_INJECT; ?>
     
@@ -353,8 +356,6 @@ function get_header() { ?>
 /*-----------------------------------------------------------------------------------*/
 
 function get_footer() { ?>
-    <!-- jQuery & Required Scripts -->
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     
     <?php if (PAGINATION_ON_OFF !== "off") { ?>
     <!-- Post Pagination -->

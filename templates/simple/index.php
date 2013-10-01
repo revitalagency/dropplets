@@ -14,6 +14,18 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
         
         <?php get_header(); ?>
+        
+        <?php //r3+ start gallery if gallery
+        if($post_gallery){
+        	echo '
+        	<!-- r3+ autoDLC -->
+			<link rel="stylesheet" href="plugins/autoDLC/css/autoDLC.css">
+			<script src="plugins/autoDLC/js/autoDLC.js"></script>
+			<script>$(document).ready(function(){autoDLC("'.$post_gallery.'");});</script>
+			';
+		}
+        ?>
+        
     </head>
 
     <body>
@@ -36,7 +48,7 @@
                 <div class="three-quarters post">
                     <h2><?php echo($intro_title); ?></h2>
         
-                    <p><?php echo($intro_text); ?></p>
+                    <p><?php echo($post_intro); ?></p>
         
                     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 </div>

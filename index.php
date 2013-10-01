@@ -314,9 +314,6 @@ else {
         $post_title = Markdown($fcontents[0]);
         $post_title = str_replace(array("\n",'<h1>','</h1>'), '', $post_title);
 
-        // Get the post intro.
-        $post_intro = htmlspecialchars($fcontents[7]);
-
         // Get the post author.
         $post_author = str_replace(array("\n", '-'), '', $fcontents[1]);
 
@@ -334,6 +331,12 @@ else {
         
         // Get the post status.
         $post_status = str_replace(array("\n", '- '), '', $fcontents[5]);
+        
+        // r3+ Get the post gallery.
+        $post_gallery = str_replace(array("\n", '- '), '', $fcontents[6]);
+        
+        // r3+ Get the post intro.
+        $post_intro = str_replace(array("\n", '- '), '', $fcontents[7]);
         
         // Get the post category link.
         $post_category_link = $blog_url.'category/'.urlencode(trim(strtolower($post_category)));
